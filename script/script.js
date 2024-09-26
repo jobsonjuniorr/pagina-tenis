@@ -1,8 +1,7 @@
-// Variáveis globais para armazenar as opções selecionadas
+
 let corSelecionada = null;
 let tamanhoSelecionado = null;
 
-// Função para selecionar a cor
 document.querySelectorAll('.corall').forEach(item => {
     item.addEventListener('click', function () {
         let imgPath = this.src;
@@ -16,18 +15,18 @@ function changeContent(imgPath) {
 
     if (corSelecionada == 'verde') {
         document.body.style.backgroundImage = 'linear-gradient(#0f630f,#9bfa83)';
-        document.querySelector(".xx").textContent = 'Tênis Nike Dunk Low "Grey Fog" Verde';
+        document.querySelector(".recebevalor").textContent = 'Tênis Nike Dunk Low "Grey Fog" Verde';
     }
     if (corSelecionada == 'cinza') {
-        document.querySelector(".xx").textContent = 'Tênis Nike Dunk Low "Grey Fog" Cinza';
+        document.querySelector(".recebevalor").textContent = 'Tênis Nike Dunk Low "Grey Fog" Cinza';
         document.body.style.backgroundImage = 'linear-gradient(#c9d5e0,#787881)';
     }
     if (corSelecionada == 'preto') {
-        document.querySelector(".xx").textContent = 'Tênis Nike Dunk Low "Grey Fog" Preto';
+        document.querySelector(".recebevalor").textContent = 'Tênis Nike Dunk Low "Grey Fog" Preto';
         document.body.style.backgroundImage = 'linear-gradient( #2b2b2c,#424242 )';
     }
     if (corSelecionada == 'azul') {
-        document.querySelector(".xx").textContent = 'Tênis Nike Dunk Low "Grey Fog" Azul';
+        document.querySelector(".recebevalor").textContent = 'Tênis Nike Dunk Low "Grey Fog" Azul';
         document.body.style.backgroundImage = 'linear-gradient( #65a6e4,#5c5cf7 )';
     }
 
@@ -42,15 +41,11 @@ function botaotamanho() {
         if (botoes.length > 0) {
             botoes.forEach(function (botao) {
                 botao.addEventListener('click', function () {
-                    // Remove a classe 'ativo' de todos os botões
+                   
                     botoes.forEach(function (btn) {
                         btn.classList.remove('ativo');
                     });
-
-                    // Adiciona a classe 'ativo' ao botão clicado
                     botao.classList.add('ativo');
-
-                    // Atualiza a variável com a opção selecionada
                     tamanhoSelecionado = botao.getAttribute('data-value')
                 });
             });
@@ -80,8 +75,5 @@ function confirmarSelecao() {
     }
 }
 
-
-
-// Chamada da função botaotamanho para garantir que o evento DOMContentLoaded seja registrado
 botaotamanho();
 
